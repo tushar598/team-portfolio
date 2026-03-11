@@ -31,11 +31,11 @@ export function Header() {
 
   return (
     <header ref={headerRef} className="w-full px-6 py-6 md:px-12 md:py-8 flex items-center justify-between z-50 relative">
-      <div className="text-2xl font-bold tracking-tighter leading-none dark:text-white">
+      <div className="text-2xl font-bold tracking-tighter leading-none text-white">
         AGNO
       </div>
 
-      <nav className="hidden md:flex items-center gap-8 text-sm font-medium dark:text-white">
+      <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white">
         <Link href="#home" onClick={(e) => handleScrollTo(e, '#home')} className="hover:opacity-70 transition-opacity flex items-center gap-1">Home</Link>
         <Link href="#services" onClick={(e) => handleScrollTo(e, '#services')} className="hover:opacity-70 transition-opacity">Services</Link>
         <Link href="#works" onClick={(e) => handleScrollTo(e, '#works')} className="hover:opacity-70 transition-opacity">Works</Link>
@@ -45,7 +45,7 @@ export function Header() {
 
       <div className="flex items-center gap-4">
         <ThemeToggle />
-        <Link href="#works" onClick={(e) => handleScrollTo(e, '#works')} className="flex items-center gap-1 text-sm font-medium border-b border-black dark:border-white pb-0.5 hover:opacity-70 transition-opacity dark:text-white">
+        <Link href="#works" onClick={(e) => handleScrollTo(e, '#works')} className="flex items-center gap-1 text-sm font-medium border-b border-white pb-0.5 hover:opacity-70 transition-opacity text-white">
           Discover more <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>

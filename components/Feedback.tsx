@@ -6,10 +6,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export function Feedback() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -61,6 +57,7 @@ export function Feedback() {
                   src="https://picsum.photos/seed/kate-johnson/200/200"
                   alt="Kate Johnson"
                   fill
+                  sizes="56px"
                   className="object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -78,6 +75,7 @@ export function Feedback() {
             src="https://picsum.photos/seed/robot-forest/800/800"
             alt="Robot in forest"
             fill
+            sizes="(max-width: 768px) 0vw, 50vw"
             className="object-cover"
             referrerPolicy="no-referrer"
           />

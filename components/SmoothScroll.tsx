@@ -9,12 +9,14 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Sync GSAP with Lenis RAF
-    const update = (time: number) => {
+    // Sync GSAP ScrollTrigger with Lenis RAF
+    const update = () => {
       ScrollTrigger.update();
     };
 
     gsap.ticker.add(update);
+    // Cap GSAP ticker to 60fps max — prevents unnecessary GPU work
+    gsap.ticker.fps(60);
 
     return () => {
       gsap.ticker.remove(update);
@@ -23,11 +25,12 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
   return (
     <ReactLenis root options={{
-      lerp: 0.1,
-      duration: 1.5,
+      lerp: 0.12,
+      duration: 1.2,
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
+      syncTouch: true,
     }}>
       {children}
     </ReactLenis>
